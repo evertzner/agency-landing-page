@@ -1,3 +1,41 @@
+---
+import ArrowDown from '../icons/ArrowDown.astro';
+import Hamburger from '../icons/Hamburger.astro';
+import Logo from '../icons/Logo.astro';
+---
+
 <main>
-  <h1 class='text-2xl text-center'>Welcome to template by Esteban Vertzner</h1>
+  <div class='relative py-[34px] px-12'>
+    <div class='flex items-center justify-between'>
+      <Logo />
+      <Hamburger />
+      <nav class='hidden md:flex gap-12 items-center'>
+        <a href='#' class='text-white text-lg font-semibold leading-[25px] tracking-[-0.129px]'
+          >About</a
+        >
+        <a href='#' class='text-white text-lg font-semibold leading-[25px] tracking-[-0.129px]'
+          >Services</a
+        >
+        <a href='#' class='text-white text-lg font-semibold leading-[25px] tracking-[-0.129px]'
+          >Projects</a
+        >
+        <a
+          href='#'
+          class='font-fraunces text-stone-950 font-bold uppercase text-[15px] leading-[25px] tracking-[-0.107px] bg-white py-4 px-8 rounded-full transition-all hover:text-white hover:bg-opacity-25'
+          >Contact</a
+        >
+      </nav>
+    </div>
+    <h1
+      class='text-center font-fraunces font-black text-[40px] text-white uppercase mt-20 leading-normal tracking-[6.25px]'
+    >
+      We are creatives
+    </h1>
+    <ArrowDown />
+    <picture class='absolute top-0 -z-10 left-0'>
+      <source media='(max-width: 767px)' srcset='/mobile/image-header.jpg' />
+      <source media='(min-width: 768px)' srcset='/desktop/image-header.jpg' />
+      <img src='/mobile/image-header.jpg' alt='Header' />
+    </picture>
+  </div>
 </main>
