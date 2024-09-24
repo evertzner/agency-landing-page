@@ -4,8 +4,10 @@ import Hamburger from '../icons/Hamburger.astro';
 import Logo from '../icons/Logo.astro';
 ---
 
-<main>
-  <div class='relative py-[34px] px-12'>
+<main class='h-full grid grid-cols-1 auto-rows-auto min-w-[375px]'>
+  <div
+    class={`flex flex-col pb-32 justify-between relative py-[34px] aspect-[375/538] md:aspect-[9/5] px-12 bg-[url('/mobile/image-header.jpg')] md:bg-[url('/desktop/image-header.jpg')] bg-contain bg-center`}
+  >
     <div class='flex items-center justify-between'>
       <Logo />
       <Hamburger />
@@ -27,15 +29,90 @@ import Logo from '../icons/Logo.astro';
       </nav>
     </div>
     <h1
-      class='text-center font-fraunces font-black text-[40px] text-white uppercase mt-20 leading-normal tracking-[6.25px]'
+      class='text-center font-fraunces font-black text-[40px] mt-7 text-white uppercase leading-normal tracking-[6.25px]'
     >
       We are creatives
     </h1>
     <ArrowDown />
-    <picture class='absolute top-0 -z-10 left-0'>
-      <source media='(max-width: 767px)' srcset='/mobile/image-header.jpg' />
-      <source media='(min-width: 768px)' srcset='/desktop/image-header.jpg' />
-      <img src='/mobile/image-header.jpg' alt='Header' />
-    </picture>
+  </div>
+  <picture>
+    <source media='(max-width: 767px)' srcset='/mobile/image-transform.jpg' />
+    <source media='(min-width: 768px)' srcset='/desktop/image-transform.jpg' />
+    <img class='w-full' src='/mobile/image-transform.jpg' alt='Transform' />
+  </picture>
+  <div class='px-6 py-16 flex flex-col'>
+    <h2
+      class='font-fraunces text-[32px] font-black tracking-[-0.229px] mb-6 text-center text-stone-950'
+    >
+      Transform your brand
+    </h2>
+    <p
+      class='text-stone-600 text-center text-lg font-semibold leading-[30px] tracking-[-0.129px] mb-8'
+    >
+      We are a full-service creative agency specializing in helping brands grow fast. Engage your
+      clients through compelling visuals that do most of the marketing for you.
+    </p>
+    <div class='self-center relative px-2'>
+      <a
+        class='font-fraunces text-stone-950 text-[15px] font-black leading-[25px] tracking-[1px] uppercase'
+        href='#'>Learn More</a
+      >
+      <div class='w-full bg-yellow-500 h-2.5 -mx-2 absolute bottom-0 -z-10 rounded-full opacity-25'>
+      </div>
+    </div>
+  </div>
+  <picture>
+    <source media='(max-width: 767px)' srcset='/mobile/image-stand-out.jpg' />
+    <source media='(min-width: 768px)' srcset='/desktop/image-stand-out.jpg' />
+    <img class='w-full' src='/mobile/image-stand-out.jpg' alt='Stand Out' />
+  </picture>
+  <div class='px-6 py-16 flex flex-col'>
+    <h2
+      class='font-fraunces text-[32px] font-black tracking-[-0.229px] mb-6 text-center text-stone-950'
+    >
+      Stand out to the right audience
+    </h2>
+    <p
+      class='text-stone-600 text-center text-lg font-semibold leading-[30px] tracking-[-0.129px] mb-8'
+    >
+      Using a collaborative formula of designers, researchers, photographers, videographers, and
+      copywriters, we’ll build and extend your brand in digital places.
+    </p>
+    <div class='self-center relative px-2'>
+      <a
+        class='font-fraunces text-stone-950 text-[15px] font-black leading-[25px] tracking-[1px] uppercase'
+        href='#'>Learn More</a
+      >
+      <div class='w-full bg-red-400 h-2.5 -mx-2 absolute bottom-0 -z-10 rounded-full opacity-25'>
+      </div>
+    </div>
+  </div>
+  <div
+    class={`flex flex-col justify-end justify relative pb-[60px] aspect-[5/8] md:aspect-[6/5] px-6 bg-[url('/mobile/image-graphic-design.jpg')] md:bg-[url('/desktop/image-graphic-design.jpg')] bg-contain bg-center`}
+  >
+    <div class='flex flex-col gap-7 items-center justify-between'>
+      <h2 class='font-fraunces text-[28px] font-black tracking-[-0.2px] text-green-800'>
+        Graphic Design
+      </h2>
+      <p class='text-green-800 font-semibold leading-[27px] tracking-[-0.114px] text-center'>
+        Great design makes you memorable. We deliver artwork that underscores your brand message and
+        captures potential clients' attention.
+      </p>
+    </div>
+  </div>
+  <div
+    class={`flex flex-col justify-end justify relative pb-[60px] aspect-[5/8] md:aspect-[6/5] px-6 bg-[url('/mobile/image-photography.jpg')] md:bg-[url('/desktop/image-photography.jpg')] bg-contain bg-center`}
+  >
+    <div class='flex flex-col gap-7 items-center justify-between'>
+      <h2
+        class='font-fraunces text-[28px] font-black tracking-[-0.2px] text-turquoise-950 opacity-75'
+      >
+        Photography
+      </h2>
+      <p class='text-turquoise-800 font-semibold leading-[27px] tracking-[-0.114px] text-center'>
+        Increase your credibility by getting the most stunning, high-quality photos that improve
+        your business image.
+      </p>
+    </div>
   </div>
 </main>
