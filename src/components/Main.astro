@@ -1,7 +1,11 @@
 ---
 import ArrowDown from '../icons/ArrowDown.astro';
+import Facebook from '../icons/Facebook.astro';
 import Hamburger from '../icons/Hamburger.astro';
+import Instagram from '../icons/Instagram.astro';
 import Logo from '../icons/Logo.astro';
+import Pinterest from '../icons/Pinterest.astro';
+import Twitter from '../icons/Twitter.astro';
 ---
 
 <main class='h-full grid grid-cols-1 auto-rows-auto min-w-[375px]'>
@@ -12,13 +16,12 @@ import Logo from '../icons/Logo.astro';
       <Logo />
       <Hamburger />
       <nav class='hidden md:flex gap-12 items-center'>
-        <a href='#' class='text-white text-lg font-semibold leading-[25px] tracking-[-0.129px]'
-          >About</a
+        <a href='#' class='text-white text-lg font-semibold leading-[25px] tracking-custom'>About</a
         >
-        <a href='#' class='text-white text-lg font-semibold leading-[25px] tracking-[-0.129px]'
+        <a href='#' class='text-white text-lg font-semibold leading-[25px] tracking-custom'
           >Services</a
         >
-        <a href='#' class='text-white text-lg font-semibold leading-[25px] tracking-[-0.129px]'
+        <a href='#' class='text-white text-lg font-semibold leading-[25px] tracking-custom'
           >Projects</a
         >
         <a
@@ -46,9 +49,7 @@ import Logo from '../icons/Logo.astro';
     >
       Transform your brand
     </h2>
-    <p
-      class='text-stone-600 text-center text-lg font-semibold leading-[30px] tracking-[-0.129px] mb-8'
-    >
+    <p class='text-stone-600 text-center text-lg font-semibold leading-[30px] tracking-custom mb-8'>
       We are a full-service creative agency specializing in helping brands grow fast. Engage your
       clients through compelling visuals that do most of the marketing for you.
     </p>
@@ -72,9 +73,7 @@ import Logo from '../icons/Logo.astro';
     >
       Stand out to the right audience
     </h2>
-    <p
-      class='text-stone-600 text-center text-lg font-semibold leading-[30px] tracking-[-0.129px] mb-8'
-    >
+    <p class='text-stone-600 text-center text-lg font-semibold leading-[30px] tracking-custom mb-8'>
       Using a collaborative formula of designers, researchers, photographers, videographers, and
       copywriters, we’ll build and extend your brand in digital places.
     </p>
@@ -113,6 +112,80 @@ import Logo from '../icons/Logo.astro';
         Increase your credibility by getting the most stunning, high-quality photos that improve
         your business image.
       </p>
+    </div>
+  </div>
+  <div class='py-16 px-6 flex flex-col items-center gap-16'>
+    <h2 class='font-fraunces text-stone-400 text-center font-black tracking-[4px] uppercase'>
+      Client Testimonials
+    </h2>
+    <div class='flex flex-col gap-8 items-center'>
+      <img src='./image-emily.jpg' alt='emily' class='w-[72px] aspect-square rounded-full' />
+      <p class='text-center text-stone-700 text-lg font-semibold leading-[32px] tracking-custom'>
+        We put our trust in Sunnyside and they delivered, making sure our needs were met and
+        deadlines were always hit.
+      </p>
+      <div class='flex flex-col gap-[9px] text-center'>
+        <p class='font-fraunces text-stone-950 text-lg font-black tracking-custom'>Emily R.</p>
+        <p class='text-stone-400 text-sm font-semibold leading-[25px] tracking-[-0.1px]'>
+          Marketing Director
+        </p>
+      </div>
+    </div>
+    <div class='flex flex-col gap-8 items-center'>
+      <img src='./image-thomas.jpg' alt='emily' class='w-[72px] aspect-square rounded-full' />
+      <p class='text-center text-stone-700 text-lg font-semibold leading-[32px] tracking-custom'>
+        Sunnyside's enthusiasm coupled with their keen interest in our brand's success made it a
+        satisfying and enjoyable experience.
+      </p>
+      <div class='flex flex-col gap-[9px] text-center'>
+        <p class='font-fraunces text-stone-950 text-lg font-black tracking-custom'>Thomas S.</p>
+        <p class='text-stone-400 text-sm font-semibold leading-[25px] tracking-[-0.1px]'>
+          Chief Operation Officer
+        </p>
+      </div>
+    </div>
+    <div class='flex flex-col gap-8 items-center'>
+      <img src='./image-jennie.jpg' alt='emily' class='w-[72px] aspect-square rounded-full' />
+      <p class='text-center text-stone-700 text-lg font-semibold leading-[32px] tracking-custom'>
+        Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly
+        recommended!
+      </p>
+      <div class='flex flex-col gap-[9px] text-center'>
+        <p class='font-fraunces text-stone-950 text-lg font-black tracking-custom'>Jennie F.</p>
+        <p class='text-stone-400 text-sm font-semibold leading-[25px] tracking-[-0.1px]'>
+          Business Owner
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class='grid grid-cols-2 grid-rows-2'>
+    <picture>
+      <source media='(max-width: 767px)' srcset='/mobile/image-gallery-milkbottles.jpg' />
+      <source media='(min-width: 768px)' srcset='/desktop/image-gallery-milkbottles.jpg' />
+      <img class='w-full' src='/mobile/image-gallery-milkbottles.jpg' alt='Milk Bottles' />
+    </picture>
+    <picture>
+      <source media='(max-width: 767px)' srcset='/mobile/image-gallery-orange.jpg' />
+      <source media='(min-width: 768px)' srcset='/desktop/image-gallery-orange.jpg' />
+      <img class='w-full' src='/mobile/image-gallery-orange.jpg' alt='Orange' />
+    </picture>
+    <picture>
+      <source media='(max-width: 767px)' srcset='/mobile/image-gallery-cone.jpg' />
+      <source media='(min-width: 768px)' srcset='/desktop/image-gallery-cone.jpg' />
+      <img class='w-full' src='/mobile/image-gallery-cone.jpg' alt='ConeOut' />
+    </picture>
+    <picture>
+      <source media='(max-width: 767px)' srcset='/mobile/image-gallery-sugarcubes.jpg' />
+      <source media='(min-width: 768px)' srcset='/desktop/image-gallery-sugarcubes.jpg' />
+      <img class='w-full' src='/mobile/image-gallery-sugarcubes.jpg' alt='Sugar Cubes' />
+    </picture>
+  </div>
+  <div class='bg-green-400 px-10 py-16 flex flex-col items-center'>
+    <div class='py-16 flex gap-7'>
+      <Facebook />
+      <Instagram />
+      <Twitter />
+      <Pinterest />
     </div>
   </div>
 </main>

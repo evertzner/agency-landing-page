@@ -18,6 +18,7 @@ export default {
           400: '#FE7766'
         },
         green: {
+          400: '#90D4C6',
           500: '#458D7E',
           600: '#3E7467',
           700: '#2C7566',
@@ -31,6 +32,9 @@ export default {
       fontFamily: {
         fraunces: ['Fraunces', 'serif'],
         barlow: ['Barlow', 'sans-serif']
+      },
+      letterSpacing: {
+        custom: '-0.129px'
       }
     }
   },
