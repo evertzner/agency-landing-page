@@ -4,29 +4,56 @@ import Facebook from '../icons/Facebook.astro';
 import Hamburger from '../icons/Hamburger.astro';
 import Instagram from '../icons/Instagram.astro';
 import Logo from '../icons/Logo.astro';
+import LogoFooter from '../icons/LogoFooter.astro';
 import Pinterest from '../icons/Pinterest.astro';
 import Twitter from '../icons/Twitter.astro';
 ---
 
+<script>
+  const nav = document.querySelector('nav') as HTMLElement;
+  const toggleNav = () => {
+    if (nav.classList.contains('hidden')) {
+      nav.classList.remove('hidden');
+    } else {
+      nav.classList.add('hidden');
+    }
+  };
+
+  document.querySelector('#hamburger')?.addEventListener('click', () => {
+    toggleNav();
+  });
+</script>
+
 <main class='h-full grid grid-cols-1 auto-rows-auto min-w-[375px]'>
   <div
-    class={`flex flex-col pb-32 justify-between relative py-[34px] aspect-[375/538] md:aspect-[9/5] px-12 bg-[url('/mobile/image-header.jpg')] md:bg-[url('/desktop/image-header.jpg')] bg-contain bg-center`}
+    class={`flex flex-col pb-32 justify-between relative py-[34px] aspect-[375/538] md:aspect-[9/5] px-12 bg-[url('/mobile/image-header.jpg')] md:bg-[url('/desktop/image-header.jpg')] bg-cover bg-center`}
   >
-    <div class='flex items-center justify-between'>
+    <div class='flex items-center justify-between relative'>
       <Logo />
       <Hamburger />
-      <nav class='hidden md:flex gap-12 items-center'>
-        <a href='#' class='text-white text-lg font-semibold leading-[25px] tracking-custom'>About</a
+      <nav
+        class='flex md:flex gap-8 md:gap-12 items-center pb-10 md:pb-0 pt-16 md:pt-0 absolute md:relative flex-col md:flex-row
+        top-12 left-1/2 md:top-0 md:left-0 bg-white md:bg-transparent -translate-x-1/2 md:translate-x-0
+        w-full md:w-auto [clip-path:polygon(0%_7%,95%_7%,100%_0%,100%_100%,0%_100%)] md:[clip-path:unset]'
+      >
+        <a
+          href='#'
+          class='text-stone-600 md:text-white text-xl md:text-lg font-semibold leading-[25px] tracking-[-0.143px] md:tracking-custom'
+          >About</a
         >
-        <a href='#' class='text-white text-lg font-semibold leading-[25px] tracking-custom'
+        <a
+          href='#'
+          class='text-stone-600 md:text-white text-xl md:text-lg font-semibold leading-[25px] tracking-[-0.143px] md:tracking-custom'
           >Services</a
         >
-        <a href='#' class='text-white text-lg font-semibold leading-[25px] tracking-custom'
+        <a
+          href='#'
+          class='text-stone-600 md:text-white text-xl md:text-lg font-semibold leading-[25px] tracking-[-0.143px] md:tracking-custom'
           >Projects</a
         >
         <a
           href='#'
-          class='font-fraunces text-stone-950 font-bold uppercase text-[15px] leading-[25px] tracking-[-0.107px] bg-white py-4 px-8 rounded-full transition-all hover:text-white hover:bg-opacity-25'
+          class='font-fraunces text-stone-950 font-bold uppercase text-[15px] leading-[25px] tracking-[-0.107px] bg-yellow-400 md:bg-white py-4 px-8 rounded-full transition-all md:hover:text-white md:hover:bg-opacity-25'
           >Contact</a
         >
       </nav>
@@ -38,87 +65,109 @@ import Twitter from '../icons/Twitter.astro';
     </h1>
     <ArrowDown />
   </div>
-  <picture>
-    <source media='(max-width: 767px)' srcset='/mobile/image-transform.jpg' />
-    <source media='(min-width: 768px)' srcset='/desktop/image-transform.jpg' />
-    <img class='w-full' src='/mobile/image-transform.jpg' alt='Transform' />
-  </picture>
-  <div class='px-6 py-16 flex flex-col'>
-    <h2
-      class='font-fraunces text-[32px] font-black tracking-[-0.229px] mb-6 text-center text-stone-950'
+  <div class='flex flex-col md:grid md:grid-cols-2'>
+    <picture class='col-start-2 col-end-3 row-start-1 row-end-2'>
+      <source media='(max-width: 767px)' srcset='/mobile/image-transform.jpg' />
+      <source media='(min-width: 768px)' srcset='/desktop/image-transform.jpg' />
+      <img class='w-full' src='/mobile/image-transform.jpg' alt='Transform' />
+    </picture>
+    <div
+      class='px-6 py-16 flex flex-col md:justify-center xl:pl-40 xl:pr-20 col-start-1 col-end-2 row-start-1 row-end-2'
     >
-      Transform your brand
-    </h2>
-    <p class='text-stone-600 text-center text-lg font-semibold leading-[30px] tracking-custom mb-8'>
-      We are a full-service creative agency specializing in helping brands grow fast. Engage your
-      clients through compelling visuals that do most of the marketing for you.
-    </p>
-    <div class='self-center relative px-2'>
-      <a
-        class='font-fraunces text-stone-950 text-[15px] font-black leading-[25px] tracking-[1px] uppercase'
-        href='#'>Learn More</a
-      >
-      <div class='w-full bg-yellow-500 h-2.5 -mx-2 absolute bottom-0 -z-10 rounded-full opacity-25'>
-      </div>
-    </div>
-  </div>
-  <picture>
-    <source media='(max-width: 767px)' srcset='/mobile/image-stand-out.jpg' />
-    <source media='(min-width: 768px)' srcset='/desktop/image-stand-out.jpg' />
-    <img class='w-full' src='/mobile/image-stand-out.jpg' alt='Stand Out' />
-  </picture>
-  <div class='px-6 py-16 flex flex-col'>
-    <h2
-      class='font-fraunces text-[32px] font-black tracking-[-0.229px] mb-6 text-center text-stone-950'
-    >
-      Stand out to the right audience
-    </h2>
-    <p class='text-stone-600 text-center text-lg font-semibold leading-[30px] tracking-custom mb-8'>
-      Using a collaborative formula of designers, researchers, photographers, videographers, and
-      copywriters, we’ll build and extend your brand in digital places.
-    </p>
-    <div class='self-center relative px-2'>
-      <a
-        class='font-fraunces text-stone-950 text-[15px] font-black leading-[25px] tracking-[1px] uppercase'
-        href='#'>Learn More</a
-      >
-      <div class='w-full bg-red-400 h-2.5 -mx-2 absolute bottom-0 -z-10 rounded-full opacity-25'>
-      </div>
-    </div>
-  </div>
-  <div
-    class={`flex flex-col justify-end justify relative pb-[60px] aspect-[5/8] md:aspect-[6/5] px-6 bg-[url('/mobile/image-graphic-design.jpg')] md:bg-[url('/desktop/image-graphic-design.jpg')] bg-contain bg-center`}
-  >
-    <div class='flex flex-col gap-7 items-center justify-between'>
-      <h2 class='font-fraunces text-[28px] font-black tracking-[-0.2px] text-green-800'>
-        Graphic Design
-      </h2>
-      <p class='text-green-800 font-semibold leading-[27px] tracking-[-0.114px] text-center'>
-        Great design makes you memorable. We deliver artwork that underscores your brand message and
-        captures potential clients' attention.
-      </p>
-    </div>
-  </div>
-  <div
-    class={`flex flex-col justify-end justify relative pb-[60px] aspect-[5/8] md:aspect-[6/5] px-6 bg-[url('/mobile/image-photography.jpg')] md:bg-[url('/desktop/image-photography.jpg')] bg-contain bg-center`}
-  >
-    <div class='flex flex-col gap-7 items-center justify-between'>
       <h2
-        class='font-fraunces text-[28px] font-black tracking-[-0.2px] text-turquoise-950 opacity-75'
+        class='font-fraunces text-[32px] md:text-2xl lg:text-[40px] md:leading-tight font-black tracking-[-0.229px] mb-6 md:mb-5 lg:mb-8 text-center md:text-left text-stone-950'
       >
-        Photography
+        Transform your brand
       </h2>
-      <p class='text-turquoise-800 font-semibold leading-[27px] tracking-[-0.114px] text-center'>
-        Increase your credibility by getting the most stunning, high-quality photos that improve
-        your business image.
+      <p
+        class='text-stone-600 text-center md:text-left text-lg md:text-sm lg:text-lg font-semibold leading-[30px] tracking-custom mb-8 md:mb-7 lg:mb-10'
+      >
+        We are a full-service creative agency specializing in helping brands grow fast. Engage your
+        clients through compelling visuals that do most of the marketing for you.
       </p>
+      <div class='self-center md:self-start relative px-2'>
+        <a
+          class='font-fraunces text-stone-950 text-[15px] md:text-sm lg:text-[15px] font-black leading-[25px] tracking-[1px] uppercase peer'
+          href='#'>Learn More</a
+        >
+        <div
+          class='w-full bg-yellow-500 h-2.5 -mx-2 absolute bottom-0 -z-10 rounded-full opacity-25 peer-hover:opacity-100 transition-all'
+        >
+        </div>
+      </div>
+    </div>
+    <picture>
+      <source media='(max-width: 767px)' srcset='/mobile/image-stand-out.jpg' />
+      <source media='(min-width: 768px)' srcset='/desktop/image-stand-out.jpg' />
+      <img class='w-full' src='/mobile/image-stand-out.jpg' alt='Stand Out' />
+    </picture>
+    <div class='px-6 py-16 flex flex-col md:justify-center xl:pr-40 xl:pl-20'>
+      <h2
+        class='font-fraunces text-[32px] md:text-2xl lg:text-[40px] md:leading-tight font-black tracking-[-0.229px] mb-6 md:mb-5 lg:mb-8 text-center md:text-left text-stone-950'
+      >
+        Stand out to the right audience
+      </h2>
+      <p
+        class='text-stone-600 text-center md:text-left text-lg md:text-sm lg:text-lg font-semibold leading-[30px] tracking-custom mb-8 md:mb-7 lg:mb-10'
+      >
+        Using a collaborative formula of designers, researchers, photographers, videographers, and
+        copywriters, we’ll build and extend your brand in digital places.
+      </p>
+      <div class='self-center md:self-start relative px-2'>
+        <a
+          class='font-fraunces text-stone-950 text-[15px] md:text-sm lg:text-[15px] font-black leading-[25px] tracking-[1px] uppercase peer'
+          href='#'>Learn More</a
+        >
+        <div
+          class='w-full bg-red-400 h-2.5 -mx-2 absolute bottom-0 -z-10 rounded-full opacity-25 peer-hover:opacity-100 transition-all'
+        >
+        </div>
+      </div>
+    </div>
+    <div
+      class={`flex flex-col justify-end justify relative pb-[60px] aspect-[5/8] md:aspect-[6/5] px-6 bg-[url('/mobile/image-graphic-design.jpg')] md:bg-[url('/desktop/image-graphic-design.jpg')] bg-contain bg-center`}
+    >
+      <div class='flex flex-col gap-7 items-center justify-between md:min-h-36 md:justify-start'>
+        <h2
+          class='font-fraunces text-[28px] font-black tracking-[-0.2px] text-green-800 md:bg-white md:bg-opacity-80 md:px-4 lg:bg-transparent'
+        >
+          Graphic Design
+        </h2>
+        <p
+          class='text-green-800 font-semibold leading-[27px] tracking-[-0.114px] text-center lg:max-w-[340px]'
+        >
+          Great design makes you memorable. We deliver artwork that underscores your brand message
+          and captures potential clients' attention.
+        </p>
+      </div>
+    </div>
+    <div
+      class={`flex flex-col justify-end justify relative pb-[60px] aspect-[5/8] md:aspect-[6/5] px-6 bg-[url('/mobile/image-photography.jpg')] md:bg-[url('/desktop/image-photography.jpg')] bg-contain bg-center`}
+    >
+      <div class='flex flex-col gap-7 items-center justify-between md:min-h-36 md:justify-start'>
+        <h2
+          class='font-fraunces text-[28px] font-black tracking-[-0.2px] text-turquoise-950 opacity-75 md:bg-white md:bg-opacity-80 md:px-4 lg:bg-transparent'
+        >
+          Photography
+        </h2>
+        <p
+          class='text-turquoise-800 font-semibold leading-[27px] tracking-[-0.114px] text-center lg:max-w-[340px]'
+        >
+          Increase your credibility by getting the most stunning, high-quality photos that improve
+          your business image.
+        </p>
+      </div>
     </div>
   </div>
-  <div class='py-16 px-6 flex flex-col items-center gap-16'>
-    <h2 class='font-fraunces text-stone-400 text-center font-black tracking-[4px] uppercase'>
+  <div
+    class='py-16 px-6 flex flex-col items-center gap-16 lg:grid lg:items-start lg:grid-cols-3 lg:grid-rows-[max-content_1fr] lg:py-40 lg:px-32 xl:px-[165px] lg:gap-x-[30px] lg:gap-y-20'
+  >
+    <h2
+      class='font-fraunces text-stone-400 text-center text-base lg:text-xl font-black tracking-[4px] uppercase lg:col-start-1 lg:col-end-4'
+    >
       Client Testimonials
     </h2>
-    <div class='flex flex-col gap-8 items-center'>
+    <div class='flex flex-col gap-8 items-center h-full justify-between'>
       <img src='./image-emily.jpg' alt='emily' class='w-[72px] aspect-square rounded-full' />
       <p class='text-center text-stone-700 text-lg font-semibold leading-[32px] tracking-custom'>
         We put our trust in Sunnyside and they delivered, making sure our needs were met and
@@ -131,7 +180,7 @@ import Twitter from '../icons/Twitter.astro';
         </p>
       </div>
     </div>
-    <div class='flex flex-col gap-8 items-center'>
+    <div class='flex flex-col gap-8 items-center h-full justify-between'>
       <img src='./image-thomas.jpg' alt='emily' class='w-[72px] aspect-square rounded-full' />
       <p class='text-center text-stone-700 text-lg font-semibold leading-[32px] tracking-custom'>
         Sunnyside's enthusiasm coupled with their keen interest in our brand's success made it a
@@ -144,7 +193,7 @@ import Twitter from '../icons/Twitter.astro';
         </p>
       </div>
     </div>
-    <div class='flex flex-col gap-8 items-center'>
+    <div class='flex flex-col gap-8 items-center h-full justify-between'>
       <img src='./image-jennie.jpg' alt='emily' class='w-[72px] aspect-square rounded-full' />
       <p class='text-center text-stone-700 text-lg font-semibold leading-[32px] tracking-custom'>
         Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly
@@ -158,7 +207,7 @@ import Twitter from '../icons/Twitter.astro';
       </div>
     </div>
   </div>
-  <div class='grid grid-cols-2 grid-rows-2'>
+  <div class='grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1'>
     <picture>
       <source media='(max-width: 767px)' srcset='/mobile/image-gallery-milkbottles.jpg' />
       <source media='(min-width: 768px)' srcset='/desktop/image-gallery-milkbottles.jpg' />
@@ -181,7 +230,15 @@ import Twitter from '../icons/Twitter.astro';
     </picture>
   </div>
   <div class='bg-green-400 px-10 py-16 flex flex-col items-center'>
-    <div class='py-16 flex gap-7'>
+    <LogoFooter />
+    <div
+      class='flex justify-between md:justify-center md:gap-14 w-full items-center mt-10 *:text-green-500 *:text-lg *:font-semibold *:leading-[25px] *:tracking-custom'
+    >
+      <a href='#' class='hover:text-white'>About</a>
+      <a href='#' class='hover:text-white'>Services</a>
+      <a href='#' class='hover:text-white'>Projects</a>
+    </div>
+    <div class='py-4 mt-[72px] flex gap-7'>
       <Facebook />
       <Instagram />
       <Twitter />
